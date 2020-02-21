@@ -10,7 +10,7 @@
     })
     console.log(wordCounts)
 } */
-
+/* 
 function most_used_word(str) {
     let wordCounts = { };
     let mostUsedWord = "";
@@ -26,6 +26,22 @@ function most_used_word(str) {
         }
     })
     document.write(mostUsedWord + " was used " + mostUsedWordCount + " times.")
+    console.log(wordCounts)
+} 
+ */
+
+function most_used_word(str) {
+    let wordCounts = { };
+    let mostUsed = {word: '', wordCount:0}
+
+    str.split(/\s/).forEach(word => {
+        wordCounts[word] = (wordCounts[word] || 0) + 1;
+        if(wordCounts[word] > mostUsed.wordCount) {
+            mostUsed.word = word;
+            mostUsed.wordCount = wordCounts[word]
+        }
+    });
+    document.write(mostUsed.word + " was used " + mostUsed.wordCount + " times.")
     console.log(wordCounts)
 } 
 
