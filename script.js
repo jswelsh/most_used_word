@@ -23,26 +23,42 @@ function most_used_word(str) {
         if(wordCounts[word] > mostUsedWordCount) {
             mostUsedWord = word;
             mostUsedWordCount = wordCounts[word]
-        }
-    })
-    document.write(mostUsedWord + " was used " + mostUsedWordCount + " times.")
-    console.log(wordCounts)
+        };
+    });
+    document.write(mostUsedWord + " was used " + mostUsedWordCount + " times.");
+    console.log(wordCounts);
 } 
  */
-
+/* 
 function most_used_word(str) {
     let wordCounts = { };
-    let mostUsed = {word: '', wordCount:0}
+    let mostUsed = {word: '', wordCount:0};
 
     str.split(/\s/).forEach(word => {
         wordCounts[word] = (wordCounts[word] || 0) + 1;
         if(wordCounts[word] > mostUsed.wordCount) {
             mostUsed.word = word;
             mostUsed.wordCount = wordCounts[word]
-        }
+        };
     });
     document.write(mostUsed.word + " was used " + mostUsed.wordCount + " times.")
-    console.log(wordCounts)
-} 
+    console.log(wordCounts);
+}  */
+
+function most_used_word(str) {
+    let wordCounts = { };
+    let mostUsed = {word: '', wordCount:0};
+
+    str.split(/\s/).forEach(word => {
+        wordCounts[word] = (wordCounts[word] || 0) + 1;
+        if(wordCounts[word] > mostUsed.wordCount) {
+            mostUsed = { word: word, wordCount: wordCounts[word]
+            };
+        };
+    });
+    document.write(mostUsed.word + " was used " + mostUsed.wordCount + " times.");
+    console.log(wordCounts);
+};
+
 
 most_used_word('alpha bravo alpha delta bravo alpha charlie charlie golf charlie foxtrot charlie')  
