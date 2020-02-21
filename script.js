@@ -45,6 +45,7 @@ function most_used_word(str) {
     console.log(wordCounts);
 }  */
 
+/* 
 function most_used_word(str) {
     let wordCounts = { };
     let mostUsed = {word: '', wordCount:0};
@@ -59,6 +60,17 @@ function most_used_word(str) {
     document.write(mostUsed.word + " was used " + mostUsed.wordCount + " times.");
     console.log(wordCounts);
 };
+ */
 
+function most_used_word(str) {
+    let wordCounts = { };
+    let mostUsed = {word: '', wordCount:0};
+    str.split(/\s/).forEach(word => {
+        wordCounts[word] = (wordCounts[word] || 0) + 1;
+        mostUsed = wordCounts[word] > mostUsed.wordCount ? {word: word, wordCount: wordCounts[word]}: mostUsed;
+    });
+    document.write(mostUsed.word + " was used " + mostUsed.wordCount + " times.");
+    console.log(wordCounts);
+}
 
 most_used_word('alpha bravo alpha delta bravo alpha charlie charlie golf charlie foxtrot charlie')  
